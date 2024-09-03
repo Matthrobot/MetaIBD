@@ -1,0 +1,153 @@
+options(digits=4, width=80)
+library(dplyr)
+library(reshape2)
+library(data.table)
+library(DT)
+library(openxlsx)
+library(futile.logger)
+
+# library(seqinr)
+
+library(ggplot2)
+apatheme = theme_bw()+
+           theme(panel.grid.major=element_blank(),
+                 panel.grid.minor=element_blank(),
+                 panel.border=element_blank(),
+                 axis.line=element_line())
+blank_theme = theme_minimal() +
+              theme(axis.title.x=element_blank(),
+                    axis.title.y=element_blank(),
+                    panel.border=element_blank(),
+                    panel.grid=element_blank(),
+                    axis.ticks=element_blank(),
+                    plot.title=element_text(size=14, face="bold")
+              )
+library(cowplot)
+library(grid)
+# library(grImport2)
+library(plotly)
+library(scales)
+library(rsvg)
+library(nVennR)
+
+font.size = '9pt'
+doGrFile = FALSE     # Leave as it is for notebook!
+inicomp = htmlwidgets::JS("function(settings, json) {",
+                          paste0("$(this.api().table().container()).css({'font-size': '", font.size, "'});"),
+                          # paste0("$(this.api().table().body()).css({'font-size': '", font.size, "'});"),
+                          "}")
+
+flog.info('Start annotation')
+INFO [2020-05-15 00:37:58] Start annotation
+countSummaryData <- function(ff) {
+  dd = read.delim(ff, header=T, row.names=1)
+  colnames(dd) = gsub('.*mtx.([A-Z0-9]+\\.[A-Z0-9_]+).sort.bam', '\\1', colnames(dd))
+  dd = as.data.frame(t(dd))
+  dd$Total = rowSums(dd)
+  dd$Timep = rownames(dd)
+  dd$Unmapped_pc = dd$Unassigned_Unmapped / dd$Total
+  dd$Assigned_pc = dd$Assigned / dd$Total
+  dd$NoFeatures_pc = dd$Unassigned_NoFeatures / dd$Total
+  nn = which(is.na(dd$Total) | dd$Total == 0)
+  if(length(nn) > 0) {
+    warning('One or more rows have zero counts')
+    dd[nn, c('Unmapped_pc','Assigned_pc','NoFeatures_pc')] = 0
+  }
+  return(data.table(dd))
+  }
+plotBars <- function(dd, cols=c('Assigned','Unassigned_NoFeatures','Unassigned_Unmapped'), xscale='Reads', 
+                     ytext=2, id.vars='Timep', hiliRows=NULL, hiliColor='red') {
+  bcol = c(id.vars,cols)
+  ddt = melt.data.table(dd[,..bcol], id.vars=id.vars, value.name='Value', variable.name='CountType')
+  means = 0
+  bcol = rev(cols)
+  if(length(cols) > 1) means = colMeans(dd[,..bcol])
+  lins = cumsum(means)
+  gg = ggplot(data=ddt) + 
+       geom_bar(aes_string(x=id.vars, y="Value", fill="CountType"),
+                stat='identity') + 
+       geom_hline(yintercept=lins) +
+       coord_flip() + ylab(xscale) +
+       apatheme + theme(axis.text.y=element_text(size=ytext))
+  if(!is.null(hiliRows)) {
+    yhl = -max(ddt$Value, na.rm=T) / 100
+    bb = dd[hiliRows, .(y=yhl), by=id.vars]
+    colnames(bb)[1] = 'x'
+    gg = gg + geom_point(data=bb, aes(x=x, y=y), size=1, color=hiliColor)
+  }
+  return(gg)
+}
+Read the Gene reference table
+
+refFileCache = paste0(refsDir, 'all-references.gff.rds')
+stopifnot(file.exists(refFileCache))
+ref = readRDS(file=refFileCache)
+flog.info('Read cache file: %s', refFileCache)
+INFO [2020-05-15 00:38:10] Read cache file: /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/data/20190923-references/all-references.gff.rds
+flog.info('Feature reference from aggregated genomic references contains %d features', nrow(ref))
+INFO [2020-05-15 00:38:10] Feature reference from aggregated genomic references contains 2878653 features
+flog.info('Columns:', colnames(ref), capture=T)
+INFO [2020-05-15 00:38:10] Columns:
+
+ [1] "seqname"     "ncbi_genome" "feature"     "start"       "end"         "score"       "strand"      "frame"       "attribute"   "class"       "accession"   "gene_id"     "locus_tag"   "number"     
+aa = ref[feature!='gene', .N, by='feature']
+datatable(aa, extensions=c('Buttons'), options=list(dom='Blrtip', buttons=c('copy','csv','excel'), pageLength=15),
+          caption='Global unified metareference: Number of features by type')
+
+
+ff = count_qcFiles[7]  # This is CDS
+dd = countSummaryData(ff)
+One or more rows have zero counts
+dd$remove = F
+dd[unlist(sapply(rmSampTP, grep, dd$Timep, USE.NAMES=F)), remove := T]
+colnames(dd)[colnames(dd)=='Assigned'] = 'Assigned_CDS'
+colnames(dd)[colnames(dd)=='Assigned_pc'] = 'CDS_pc'
+colnames(dd)[colnames(dd)=='Unassigned_Ambiguity'] = 'Ambiguous_CDS'
+setkey(dd, Timep)
+# get the others
+atypes = c('misc_RNA','ncRNA','tmRNA','mRNA','rRNA','tRNA')
+for(tt in atypes) {
+  ff = count_qcFiles[grep(paste0('oth-',tt), count_qcFiles)]
+  ee = countSummaryData(ff)
+  setkey(ee, Timep)
+  stopifnot(all(dd$Timep==ee$Timep))
+  dd[ee, Unassigned_NoFeatures := Unassigned_NoFeatures - i.Assigned, on='Timep']
+  q = data.table(ee$Assigned, ee$Unassigned_Ambiguity, ee$Assigned_pc)
+  colnames(q) = c(paste0(c('Assigned_','Ambiguous_'), tt), paste0(tt,'_pc'))
+  dd = cbind(dd, q)
+}
+One or more rows have zero countsOne or more rows have zero countsOne or more rows have zero countsOne or more rows have zero countsOne or more rows have zero countsOne or more rows have zero counts
+# Fix some computations
+# Since it is possible that things do not square up nicely (as we have done several feature counts and there may be feature overlap)
+# estimate on those who have negative unmapped nofeatures
+dd[Unassigned_NoFeatures < 0, Overlap.est := -Unassigned_NoFeatures / Total]
+dd[Unassigned_NoFeatures < 0, Unassigned_NoFeatures := 0]
+dd[, NoFeatures_pc := Unassigned_NoFeatures / Total]
+gg = plotBars(dd, ytext=4, hiliRows=which(dd$remove), cols=c(paste0('Assigned_',c('CDS',atypes)),'Unassigned_NoFeatures','Unassigned_Unmapped')) + 
+     ggtitle('Counts by type per timepoint')
+ggplotly(gg)
+
+gg = plotBars(dd, ytext=4, hiliRows=which(dd$remove), xscale='Fraction',
+              cols=paste0(c('Unmapped','CDS',atypes,'NoFeatures'),'_pc')) + 
+     ggtitle('Counts fraction by type per timepoint') +
+     geom_hline(yintercept=1.0, size=.2)
+ggplotly(gg)
+
+dd$Sample = gsub('([^.]+)\\..*','\\1',dd$Timep)
+
+ambi = dd[, .(Ambiguous = sum(sapply(.SD,sum))), .SDcols=grep('^Ambiguous_', colnames(dd)), by='Sample']
+myCols = c(grep('^Assigned_', colnames(dd)), which(colnames(dd) %in% c('Unassigned_Unmapped','Unassigned_NoFeatures','Total')))
+dds = cbind(dd[, lapply(.SD,sum), .SDcols=myCols, by='Sample'], ambi)
+myCols = c(grep('^Assigned_', colnames(dds)), which(colnames(dds) %in% c('Unassigned_Unmapped','Unassigned_NoFeatures')))
+
+ddq = dds[, .SD / Total, .SDcols=myCols, by='Sample']
+colnames(ddq) = c('Sample',paste0(c('CDS',atypes,'Unmapped','NoFeatures'),'_pc'))
+Total number of mapped reads:
+
+gg = plotBars(dds, cols='Total', id.vars='Sample', ytext=6)
+ggplotly(gg)
+
+gg = plotBars(dds,cols=colnames(dds)[c(2:10,13)], id.vars='Sample', ytext=6) + ggtitle('Total per individual')
+ggplotly(gg)
+gg = plotBars(ddq, cols=colnames(ddq)[2:10], id.vars='Sample', ytext=6) + ggtitle('Fraction per individual')
+ggplotly(gg)
