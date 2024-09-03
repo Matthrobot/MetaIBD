@@ -1,3 +1,11 @@
+INFO [2019-10-21 10:00:09] There are 734 alignment log files, and 7 timepoints/samples in the remove list
+INFO [2019-10-21 10:00:09] After removing 13 predefined dubious timepoints, 721 timepoints remain (103 samples)
+
+INFO [2019-10-21 10:00:12] 721 original alignment log files, and 7 timepoints/samples in the remove list
+INFO [2019-10-21 10:00:12] After removing 13 predefined dubious timepoints, 721 timepoints remain (103 samples)
+
+
+
 INFO [2019-10-21 10:03:33] Found 734 aligned BAM files
 INFO [2019-10-21 10:03:33] There are in total 79 timepoint BAMs identified for the 9 samples to process
 INFO [2019-10-21 10:03:48] Read cache file
