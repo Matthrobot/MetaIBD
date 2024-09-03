@@ -1,0 +1,97 @@
+INFO [2019-10-21 10:03:33] Found 734 aligned BAM files
+INFO [2019-10-21 10:03:33] There are in total 79 timepoint BAMs identified for the 9 samples to process
+INFO [2019-10-21 10:03:48] Read cache file
+Validity checks: All sequence levels should be same, but sequences not. We test last using set intersection
+
+INFO [2019-10-21 10:23:27] "Chromosomal" sequences are the same for all timepoints: TRUE
+INFO [2019-10-21 10:23:27] Lengths of sequence lists are the same: all:FALSE
+Process references extracting list of chromosomal sequences
+
+INFO [2019-10-21 12:59:27] Sample: C3031: 43 new refs, 43 total
+INFO [2019-10-21 12:59:27] Sample: C3031: 25 new refs, 46 total
+INFO [2019-10-21 12:59:27] Sample: C3031: 16 new refs, 47 total
+INFO [2019-10-21 12:59:27] Sample: C3031: 62 new refs, 74 total
+INFO [2019-10-21 12:59:27] Sample: C3031: 39 new refs, 76 total
+INFO [2019-10-21 12:59:27] Sample: C3031: 35 new refs, 76 total
+INFO [2019-10-21 12:59:27] Sample: C3031: 30 new refs, 80 total
+INFO [2019-10-21 12:59:28] Sample: C3031: 24 new refs, 80 total
+INFO [2019-10-21 12:59:28] Sample: C3031: 13 new refs, 80 total
+INFO [2019-10-21 12:59:28] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-C3031.txt
+INFO [2019-10-21 12:59:28] Sample: C3037: 13 new refs, 13 total
+INFO [2019-10-21 12:59:28] Sample: C3037: 26 new refs, 30 total
+INFO [2019-10-21 12:59:28] Sample: C3037: 18 new refs, 33 total
+INFO [2019-10-21 12:59:28] Sample: C3037: 28 new refs, 44 total
+INFO [2019-10-21 12:59:28] Sample: C3037: 9 new refs, 44 total
+INFO [2019-10-21 12:59:28] Sample: C3037: 19 new refs, 47 total
+INFO [2019-10-21 12:59:28] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-C3037.txt
+INFO [2019-10-21 12:59:28] Sample: M2061: 1 new refs, 1 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 45 new refs, 45 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 30 new refs, 46 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 22 new refs, 46 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 42 new refs, 57 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 33 new refs, 60 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 48 new refs, 71 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 6 new refs, 71 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 11 new refs, 71 total
+INFO [2019-10-21 12:59:28] Sample: M2061: 20 new refs, 71 total
+INFO [2019-10-21 12:59:28] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-M2061.txt
+INFO [2019-10-21 12:59:29] Sample: M2047: 23 new refs, 23 total
+INFO [2019-10-21 12:59:29] Sample: M2047: 17 new refs, 23 total
+INFO [2019-10-21 12:59:29] Sample: M2047: 23 new refs, 29 total
+INFO [2019-10-21 12:59:29] Sample: M2047: 21 new refs, 30 total
+INFO [2019-10-21 12:59:29] Sample: M2047: 26 new refs, 32 total
+INFO [2019-10-21 12:59:29] Sample: M2047: 24 new refs, 34 total
+INFO [2019-10-21 12:59:29] Sample: M2047: 7 new refs, 34 total
+INFO [2019-10-21 12:59:29] Sample: M2047: 7 new refs, 34 total
+INFO [2019-10-21 12:59:29] Sample: M2047: 20 new refs, 34 total
+INFO [2019-10-21 12:59:29] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-M2047.txt
+INFO [2019-10-21 12:59:29] Sample: C3011: 2 new refs, 2 total
+INFO [2019-10-21 12:59:29] Sample: C3011: 44 new refs, 44 total
+INFO [2019-10-21 12:59:29] Sample: C3011: 7 new refs, 46 total
+INFO [2019-10-21 12:59:29] Sample: C3011: 29 new refs, 57 total
+INFO [2019-10-21 12:59:29] Sample: C3011: 34 new refs, 78 total
+INFO [2019-10-21 12:59:29] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-C3011.txt
+INFO [2019-10-21 12:59:29] Sample: C3023: 10 new refs, 10 total
+INFO [2019-10-21 12:59:29] Sample: C3023: 6 new refs, 13 total
+INFO [2019-10-21 12:59:29] Sample: C3023: 2 new refs, 14 total
+INFO [2019-10-21 12:59:29] Sample: C3023: 2 new refs, 14 total
+INFO [2019-10-21 12:59:29] Sample: C3023: 22 new refs, 24 total
+INFO [2019-10-21 12:59:29] Sample: C3023: 19 new refs, 27 total
+INFO [2019-10-21 12:59:29] Sample: C3023: 37 new refs, 40 total
+INFO [2019-10-21 12:59:29] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-C3023.txt
+INFO [2019-10-21 12:59:30] Sample: H4044: 23 new refs, 23 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 18 new refs, 25 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 55 new refs, 62 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 16 new refs, 63 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 6 new refs, 63 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 3 new refs, 63 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 17 new refs, 64 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 20 new refs, 66 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 13 new refs, 66 total
+INFO [2019-10-21 12:59:30] Sample: H4044: 8 new refs, 66 total
+INFO [2019-10-21 12:59:30] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-H4044.txt
+INFO [2019-10-21 12:59:31] Sample: M2064: 5 new refs, 5 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 16 new refs, 16 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 7 new refs, 18 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 6 new refs, 19 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 5 new refs, 19 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 7 new refs, 19 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 9 new refs, 20 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 3 new refs, 20 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 10 new refs, 21 total
+INFO [2019-10-21 12:59:32] Sample: M2064: 1 new refs, 21 total
+INFO [2019-10-21 12:59:32] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-M2064.txt
+INFO [2019-10-21 12:59:32] Sample: H4019: 20 new refs, 20 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 23 new refs, 28 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 4 new refs, 30 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 30 new refs, 41 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 40 new refs, 53 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 40 new refs, 60 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 19 new refs, 61 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 16 new refs, 61 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 60 new refs, 86 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 49 new refs, 93 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 45 new refs, 98 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 1 new refs, 98 total
+INFO [2019-10-21 12:59:32] Sample: H4019: 44 new refs, 99 total
+INFO [2019-10-21 12:59:32] Wrote new refs to /home/carlos/Projects/BIO18025-201808-FunMG-Kaiko/rcg/genomes/addgenolist-H4019.txt
