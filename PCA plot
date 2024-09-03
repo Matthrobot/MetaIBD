@@ -1,0 +1,12 @@
+2.5.1.1 PCA code
+
+INFO [2023-03-13 11:24:05] Read DESeq cache file ~/Projects/BIO18025-201808-FunMG-Kaiko/doc/20210907-MaterialsMethodsFigs-MG/mycachefile-participant-data.rds
+INFO [2023-03-13 11:24:05] By Sample DESeqDataSet created:
+class: DESeqDataSet 
+dim: 57081 103 
+metadata(1): version
+assays(1): counts
+rownames(57081): BACT_00007_gene BACT_00012_gene ... BACT_1410510_gene BACT_1410607_gene
+rowData names(16): Geneid Chr ... ncbi_type n_taxa
+colnames(103): C3001 C3002 ... P6017 P6018
+colData names(10): Participant numTPs ... group sex
