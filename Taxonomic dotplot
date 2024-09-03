@@ -1,0 +1,141 @@
+INFO [2023-03-13 11:27:55] === Results for diagnosis-CD-nonIBD (100% SS) with LFC > 2 and p-value < 0.0001:
+INFO [2023-03-13 11:27:55]   Std: 114
+INFO [2023-03-13 11:27:55]   APEglm: 2085
+INFO [2023-03-13 11:27:56]   Unique scaffolds: 603
+INFO [2023-03-13 11:27:56]   Unique genomes: 90
+INFO [2023-03-13 11:27:56]   Unique CDS: 4413; 2085 at 100% SS
+INFO [2023-03-13 11:27:56]   Unique taxa Id: 90
+INFO [2023-03-13 11:27:56]   Unique species taxa Id: 65
+INFO [2023-03-13 11:27:56] The scaffolds picked up by DE genes comprise 387290 / 1434442 (0.27) total genes
+INFO [2023-03-13 11:27:57] This is 292386 / 1240722 (0.24) unique AA sequences
+INFO [2023-03-13 11:27:58] Restricting to genes that pass expression detection filters, this represents:
+
+   seqid   source       ID prot_uid     cd98 
+    2970       90    83672    46482    38963 
+INFO [2023-03-13 11:27:58] Where:
+                seqid:    scaffold
+                source:   NCBI genome
+                ID:       Prokka gene
+                prot_uid: Unique AA seq (cd100)
+                cd98:     Unique cd98 cluster
+                
+
+INFO [2023-03-13 11:27:59] === Results for diagnosis-CD-nonIBD (98% SS) with LFC > 2 and p-value < 0.0001:
+INFO [2023-03-13 11:27:59]   Std: 159
+INFO [2023-03-13 11:27:59]   APEglm: 1590
+INFO [2023-03-13 11:28:00]   Unique scaffolds: 700
+INFO [2023-03-13 11:28:00]   Unique genomes: 112
+INFO [2023-03-13 11:28:00]   Unique CDS: 6352; 1590 at 98% SS
+INFO [2023-03-13 11:28:00]   Unique taxa Id: 112
+INFO [2023-03-13 11:28:00]   Unique species taxa Id: 81
+INFO [2023-03-13 11:28:00] The scaffolds picked up by DE genes comprise 462279 / 1434442 (0.32) total genes
+INFO [2023-03-13 11:28:01] This is 357349 / 1240722 (0.29) unique AA sequences
+INFO [2023-03-13 11:28:01] Restricting to genes that pass expression detection filters, this represents:
+
+   seqid   source       ID prot_uid     cd98 
+    3564      112   115515    73163    42528 
+INFO [2023-03-13 11:28:01] Where:
+                seqid:    scaffold
+                source:   NCBI genome
+                ID:       Prokka gene
+                prot_uid: Unique AA seq (cd100)
+                cd98:     Unique cd98 cluster
+                
+
+INFO [2023-03-13 11:28:03] === Results for diagnosis-UC-nonIBD (100% SS) with LFC > 2 and p-value < 0.0001:
+INFO [2023-03-13 11:28:03]   Std: 42
+INFO [2023-03-13 11:28:03]   APEglm: 622
+INFO [2023-03-13 11:28:04]   Unique scaffolds: 302
+INFO [2023-03-13 11:28:04]   Unique genomes: 110
+INFO [2023-03-13 11:28:04]   Unique CDS: 895; 622 at 100% SS
+INFO [2023-03-13 11:28:04]   Unique taxa Id: 110
+INFO [2023-03-13 11:28:04]   Unique species taxa Id: 92
+INFO [2023-03-13 11:28:04] The scaffolds picked up by DE genes comprise 436161 / 1434442 (0.30) total genes
+INFO [2023-03-13 11:28:05] This is 351270 / 1240722 (0.28) unique AA sequences
+INFO [2023-03-13 11:28:05] Restricting to genes that pass expression detection filters, this represents:
+
+   seqid   source       ID prot_uid     cd98 
+    3502      110    89779    53799    45728 
+INFO [2023-03-13 11:28:05] Where:
+                seqid:    scaffold
+                source:   NCBI genome
+                ID:       Prokka gene
+                prot_uid: Unique AA seq (cd100)
+                cd98:     Unique cd98 cluster
+                
+
+INFO [2023-03-13 11:28:06] === Results for diagnosis-UC-nonIBD (98% SS) with LFC > 2 and p-value < 0.0001:
+INFO [2023-03-13 11:28:06]   Std: 49
+INFO [2023-03-13 11:28:06]   APEglm: 628
+INFO [2023-03-13 11:28:07]   Unique scaffolds: 425
+INFO [2023-03-13 11:28:07]   Unique genomes: 128
+INFO [2023-03-13 11:28:07]   Unique CDS: 1364; 628 at 98% SS
+INFO [2023-03-13 11:28:07]   Unique taxa Id: 128
+INFO [2023-03-13 11:28:07]   Unique species taxa Id: 108
+INFO [2023-03-13 11:28:08] The scaffolds picked up by DE genes comprise 498416 / 1434442 (0.35) total genes
+INFO [2023-03-13 11:28:09] This is 404081 / 1240722 (0.33) unique AA sequences
+INFO [2023-03-13 11:28:09] Restricting to genes that pass expression detection filters, this represents:
+
+   seqid   source       ID prot_uid     cd98 
+    3956      128   118386    78048    48523 
+INFO [2023-03-13 11:28:09] Where:
+                seqid:    scaffold
+                source:   NCBI genome
+                ID:       Prokka gene
+                prot_uid: Unique AA seq (cd100)
+                cd98:     Unique cd98 cluster
+                
+
+INFO [2023-03-13 11:28:11] === Results for ActivityLevel-High-Low (100% SS) with LFC > 2 and p-value < 0.0001:
+INFO [2023-03-13 11:28:11]   Std: 0
+INFO [2023-03-13 11:28:11]   APEglm: 271
+INFO [2023-03-13 11:28:12]   Unique scaffolds: 210
+INFO [2023-03-13 11:28:12]   Unique genomes: 60
+INFO [2023-03-13 11:28:12]   Unique CDS: 544; 271 at 100% SS
+INFO [2023-03-13 11:28:12]   Unique taxa Id: 60
+INFO [2023-03-13 11:28:12]   Unique species taxa Id: 41
+INFO [2023-03-13 11:28:12] The scaffolds picked up by DE genes comprise 280764 / 1434442 (0.20) total genes
+INFO [2023-03-13 11:28:13] This is 214221 / 1240722 (0.17) unique AA sequences
+INFO [2023-03-13 11:28:13] Restricting to genes that pass expression detection filters, this represents:
+
+   seqid   source       ID prot_uid     cd98 
+    2432       60    63246    35435    28901 
+INFO [2023-03-13 11:28:13] Where:
+                seqid:    scaffold
+                source:   NCBI genome
+                ID:       Prokka gene
+                prot_uid: Unique AA seq (cd100)
+                cd98:     Unique cd98 cluster
+                
+
+INFO [2023-03-13 11:28:14] === Results for ActivityLevel-High-Low (98% SS) with LFC > 2 and p-value < 0.0001:
+INFO [2023-03-13 11:28:14]   Std: 0
+INFO [2023-03-13 11:28:14]   APEglm: 225
+INFO [2023-03-13 11:28:15]   Unique scaffolds: 273
+INFO [2023-03-13 11:28:15]   Unique genomes: 65
+INFO [2023-03-13 11:28:15]   Unique CDS: 661; 225 at 98% SS
+INFO [2023-03-13 11:28:15]   Unique taxa Id: 65
+INFO [2023-03-13 11:28:15]   Unique species taxa Id: 44
+INFO [2023-03-13 11:28:15] The scaffolds picked up by DE genes comprise 310698 / 1434442 (0.22) total genes
+INFO [2023-03-13 11:28:16] This is 232545 / 1240722 (0.19) unique AA sequences
+INFO [2023-03-13 11:28:16] Restricting to genes that pass expression detection filters, this represents:
+
+   seqid   source       ID prot_uid     cd98 
+    2828       65    91813    56112    29976 
+INFO [2023-03-13 11:28:16] Where:
+                seqid:    scaffold
+                source:   NCBI genome
+                ID:       Prokka gene
+                prot_uid: Unique AA seq (cd100)
+                cd98:     Unique cd98 cluster
+                
+INFO [2023-03-13 11:28:17] Accross all 3 DE contrasts (CD - nonIBD, UC - nonIBD, Activity High - Low) and 2 clustering strategies (100%, 98%) we have in total:
+INFO [2023-03-13 11:28:17]     431 taxa (134 unique), distributed as:
+INFO [2023-03-13 11:28:17] 
+
+
+Act. High - Low (100% SS)  Act. High - Low (98% SS)     CD - nonIBD (100% SS)      CD - nonIBD (98% SS)     UC - nonIBD (100% SS) 
+                       41                        44                        65                        81                        92 
+     UC - nonIBD (98% SS) 
+                      108 
+INFO [2023-03-13 11:28:17]     14229 individual gene results (9017 unique)
